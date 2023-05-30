@@ -3,7 +3,7 @@ class Solution:
     # as possible and then returns the length of the string. note that removing an AB or
     # CD string might produce a new one.
     def minLength(self, s: str) -> int:
-        # what is the index of the first character we are considering?
+        # this is the index of the first character we are considering
 
         # iterate until the index is 2 characters from the length of the string
 
@@ -18,12 +18,7 @@ class Solution:
 
             # otherwise...
 
-                # if the next character is A or C...
-
-                    # we can consider it...
-
-                # and otherwise...
-
-                    # skip it and advance twice.
-
-        return 2
+                # increment the index
+        
+        # return the length of the string
+        return len(s)
