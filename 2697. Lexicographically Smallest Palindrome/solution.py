@@ -11,13 +11,13 @@ class Solution:
         # If the string length is even, then the first index should be the string length divided
         # by two minus one, and the last index should be the same except plus instead of minus.
         
-        # This is the resulting string.
+        # This is the string resulting from operations.
         
         # While the first index is in range of the string...
         
             # Check the letters in the index of the resulting string.
             
-                # If they are different, then check the code of the letters. Note that this is
+                # If they are different, then check the ascii code of the letters. Note that this is
                 # only lowercase English letters, so there will be no confusions.
                 
                 # Make the letter with the bigger code the one with the smaller code.
