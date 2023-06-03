@@ -20,7 +20,10 @@ class Solution:
                     # it cleared the way for an AB or CD. 
                     index -= 1
 
-            # otherwise...
+            # otherwise, we prepare for the next iteration by incrementing the index.
+            # IMPORTANT: Only do this if we didn't find a pair because otherwise the
+            # two effects will cancel eachother out and patterns like ACDB will turn
+            # into AB.
             else:
                 # increment index.
                 index += 1
