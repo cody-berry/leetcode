@@ -8,14 +8,14 @@ class Solution:
         # If the string length is odd, then the center should be the middle letter, and the first
         # and last indices surround it.
         if (len(s) % 2 == 1):
-            firstIndex = floor(len(s)/2) - 1
-            lastIndex = floor(len(s)/2) + 1
+            firstIndex = len(s)//2 - 1
+            lastIndex = len(s)//2 + 1
         
         # If the string length is even, then the first and last index should be the letters around
         # the middle.
         else:
-            firstIndex = floor(len(s)/2) - 1
-            lastIndex = floor(len(s)/2)
+            firstIndex = len(s)//2 - 1
+            lastIndex = len(s)//2
         
         # This is the resulting string.
         changedString = s
@@ -32,9 +32,7 @@ class Solution:
                     smallestLetter = s[firstIndex]
                 
                 # Make the letter with the bigger code the one with the smaller code.
-                changedString = (changedString[:firstIndex] + smallestLetter + 
-                                changedString[(firstIndex+1):lastIndex] + 
-                                smallestLetter + changedString[(lastIndex+1):])
+                changedString = f"{changedString[:firstIndex]} + smallestLetter + {changedString[(firstIndex+1):lastIndex]} + smallestLetter + {changedString[(lastIndex+1):]}"
             firstIndex -= 1
             lastIndex += 1
         
