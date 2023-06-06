@@ -5,21 +5,36 @@ class Solution:
     # the alphabet then the respective letter in b does.
     def makeSmallestPalindrome(self, s: str) -> str:
         # These are the two indices that, in the resulting string, we are going to make the same.
-        # If the string length is odd, then the first index should start at the floored value
-        # and the second index should start at the ceiled value.
+        # If the string length is odd, then the center should be the middle letter, and the first
+        # and last indices surround it.
+        if (len(s) % 2 == 1):
+            firstIndex = len(s)//2 - 1
+            lastIndex = len(s)//2 + 1
         
-        # If the string length is even, then the first index should be the string length divided
-        # by two minus one, and the last index should be the same except plus instead of minus.
+        # If the string length is even, then the first and last index should be the letters around
+        # the middle.
+        else:
+            firstIndex = len(s)//2 - 1
+            lastIndex = len(s)//2
         
-        # This is the string resulting from operations.
+        # This is the resulting string.
+        changedString = s
         
         # While the first index is in range of the string...
-        
+        while (firstIndex >= 0):
             # Check the letters in the index of the resulting string.
-            
-                # If they are different, then check the ascii code of the letters. Note that this is
+            if (s[firstIndex] != s[lastIndex]):
+                # If they are different, then check the code of the letters. Note that this is
                 # only lowercase English letters, so there will be no confusions.
+                if (s[firstIndex] > s[lastIndex]):
+                    smallestLetter = s[lastIndex]
+                else:
+                    smallestLetter = s[firstIndex]
                 
                 # Make the letter with the bigger code the one with the smaller code.
+                changedString = f"{changedString[:firstIndex]} + smallestLetter + {changedString[(firstIndex+1):lastIndex]} + smallestLetter + {changedString[(lastIndex+1):]}"
+            firstIndex -= 1
+            lastIndex += 1
         
         # Return the resulting string.
+        return changedString
