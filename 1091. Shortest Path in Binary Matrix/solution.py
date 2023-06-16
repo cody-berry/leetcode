@@ -1,34 +1,43 @@
 class Solution:
-    # Given a grid, returns the shortest clear path from the 
-    # top-left corner to the bottom-right corner. A clear path is one 
-    # that traverses only 0s and can go diagonally. If there is none,
-    # returns -1.
+    # Given a grid containing 0s and 1s, return the shortest clear path 
+    # from the top-left corner to the bottom-right corner. A clear path 
+    # is one that traverses only 0s and can go to cells that share an 
+    # edge or corner. If there is none, return -1.
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
-        # Uses a BFS traversal to get the shortest path from the
-        # top-left to the bottom-right so needs a queue. Entries are
-        # in the form of [row, col].
+        # There is no clear path if the top-left or bottom-right corner
+        # is a 1, as either something is obstructing the start or the 
+        # end.
+        
+        # Uses a queue for a BFS traversal to get the shortest path 
+        # from the top-left to the bottom-right so needs a queue. 
+        # Each entry is a tuple containing (row, col).
 
-        # Define a version of the grid but for the length of the 
-        # shortest clear path from the top-left corner to the grid. 
-        # Note that entries that haven't been visited are -1. 
+        # Define a visited list containing the rows and cols we've 
+        # visited. Uses the same entries that the BFS traversal uses.
 
-        # Set the first of that grid to 1.
-
-        # Define the round number.
+        # Define the number of iterations.
 
         # while there are still entries in the queue...
 
-            # set the rowIndex and colIndex appropriately.
+            # get the length of the queue so that we know what parts
+            # of the queue are in this iteration.
 
-            # if rowIndex and colIndex are at the end, we return the round num.
+            # while we're looking at the queue elements from last 
+            # round...
+            
+                # set the rowIndex and colIndex based on the next
+                # element of the queue.
+    
+                # if rowIndex and colIndex are at the end, we've found
+                # a clear path from the top-left to the bottom-right.
 
-            # iterate through every possible direction.
+                # iterate through every possible direction.
 
-                # as long as the element is not 0...
+                    # as long as the element is not 0...
 
-                    # we append the element.
+                        # we append the element to the queue.
 
-        # -1 means we didn't find anything.
+        # -1 means we didn't find a clear path.
         return -1
 
 
