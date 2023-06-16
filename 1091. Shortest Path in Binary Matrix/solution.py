@@ -2,7 +2,7 @@ class Solution:
     # Given a grid containing 0s and 1s, return the shortest clear path 
     # from the top-left corner to the bottom-right corner. A clear path 
     # is one that traverses only 0s and can go to cells that share an 
-    # edge or corner. If there is none, return -1.
+    # edge or corner. If there is no clear path, return -1.
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
         # There is no clear path if the top-left or bottom-right corner
         # is a 1, as either something is obstructing the start or the 
@@ -15,7 +15,7 @@ class Solution:
         # Define a visited list containing the rows and cols we've 
         # visited. Uses the same entries that the BFS traversal uses.
 
-        # Define the number of iterations.
+        # Define the length of the path.
 
         # while there are still entries in the queue...
 
@@ -36,6 +36,8 @@ class Solution:
                     # as long as the element is not 0...
 
                         # we append the element to the queue.
+
+                        # we append the element to the visited.
 
         # -1 means we didn't find a clear path.
         return -1
