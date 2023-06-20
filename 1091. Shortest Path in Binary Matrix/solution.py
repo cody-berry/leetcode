@@ -33,7 +33,7 @@ class Solution:
 
                 # iterate through every possible direction.
 
-                    # as long as the element is not 0...
+                    # as long as the element is 0...
 
                         # we append the element to the queue.
 
