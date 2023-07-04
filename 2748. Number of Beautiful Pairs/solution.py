@@ -3,8 +3,7 @@ class Solution:
     # A pair of numbers is called "beautiful" if the greatest common divisor of 
     # the first digit of the first number and the last digit of the second
     # number have a greatest common divisor of 1, which is exactly what the
-    # second function 
-    # handles.
+    # second function handles.
     def countBeautifulPairs(self, nums: List[int]) -> int:
         # define the number of beautiful pairs.
         
@@ -35,6 +34,6 @@ class Solution:
             
             # decrement the divisor.
 
-        # there is a garuantee we will find something because both a and b will 
+        # it's gauranteed we will find something because both a and b will 
         # be divisible by 1 in the cases that we are using this. 
     
