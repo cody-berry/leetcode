@@ -1,14 +1,15 @@
 class Solution:
-    # Given a list of nums, it returns the number of beautiful pairs. A pair of
-    # numbers is called "beautiful" if the greatest common divisor of the first
-    # digit of the first number and the last digit of the second number have a 
-    # greatest common divisor of 1, which is exactly what the second function 
+    # Given a list of nums, this function returns the number of beautiful pairs. 
+    # A pair of numbers is called "beautiful" if the greatest common divisor of 
+    # the first digit of the first number and the last digit of the second
+    # number have a greatest common divisor of 1, which is exactly what the
+    # second function 
     # handles.
     def countBeautifulPairs(self, nums: List[int]) -> int:
         # define the number of beautiful pairs.
         
-        # define an alternate nums list that's a tuple of the first and last
-        # digits of the number.
+        # define a list of tuples containing the first and last digits of the 
+		# respective number.
         
         # for each of the alternate nums...
             
@@ -34,6 +35,6 @@ class Solution:
             
             # decrement the divisor.
 
-        # there is a garuntee we will find something because both a and b will 
+        # there is a garuantee we will find something because both a and b will 
         # be divisible by 1 in the cases that we are using this. 
     
