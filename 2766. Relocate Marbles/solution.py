@@ -3,19 +3,16 @@ class Solution:
     # marbles. Each element in nums represents a position, and you are supposed to move each marble
     # in that position 
     def relocateMarbles(self, nums: List[int], moveFrom: List[int], moveTo: List[int]) -> List[int]:
-        # iterate through moveFrom and moveTo.
-            
-            # for each number in nums...
-                
-                # if it's moveFrom, move it to moveTo.
-        
         # convert nums to a set.
+        setNums = set(nums)
         
-        # convert nums to a list.
-                
-        # sort nums.
+        # for each element in moveFrom...
+        for i in range(len(moveFrom)):
+            # there is garunteed to be an instance of moveFrom[i] in each iteration and only one.
+            setNums.remove(moveFrom[i])
+            setNums.add(moveTo[i])
         
-        # return nums.
-        
+        # return sorted nums as a list.
+        return sorted(list(setNums))
         
                 
