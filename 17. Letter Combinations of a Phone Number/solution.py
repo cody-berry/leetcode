@@ -1,21 +1,27 @@
-# define the mapping of digits from 2-9 to a list of letters
-
 class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        # if digits is of length one, return the mapping of digits accessing the digit
+    # Given an array of nums, return all possible permutations 
+    # of that array.
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        # if nums is length 1, return [[nums[0]]]
+        if len(nums) == 1:
+            return [[nums[0]]]
 
-        # if digits is of length zero, return an empty list
+        # define the result.
+        result = []
 
-        # otherwise, get the mapping of digits accessing the last digit
+        # for each number in nums...
+        for i in range(len(nums)):
+            # permute nums again, but this time without the
+            # number we're starting with.
+            newNums = nums.copy()
+            num = newNums.pop(i)
+            previousResult = self.permute(newNums)
 
-        # define the result
+            # for each element in it, append the starting num
+            # to it, then append it to result.
+            for permutation in previousResult:
+                permutation.append(nums[i])
+                result.append(permutation)
 
-        # then recursively call on this function except without the last digit
-
-        # for each string inside...
-
-            # for each of the map of digits accessing the last digit...
-
-                # append the letter to the string, then append it to result.
-
-        # return the result
+        # return the result.
+        return result
